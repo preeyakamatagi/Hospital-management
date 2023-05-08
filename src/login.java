@@ -151,7 +151,7 @@ public class login extends javax.swing.JFrame {
           
              
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             
             pst = con.prepareStatement("select * from user where username =? and password =? and utype = ?");
