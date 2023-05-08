@@ -274,7 +274,7 @@ private JTextComponent txtdrno;
     private void table_update() {
         int CC;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
                   con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("SELECT * FROM pres");
              ResultSet Rs = pst.executeQuery();  
@@ -312,7 +312,7 @@ private JTextComponent txtdrno;
          
          
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("insert into pres(chid,detype,description)values(?,?,?)");
             pst.setString(1, chid);
@@ -391,8 +391,8 @@ private JTextComponent txtdrno;
         String room = txtroom.getValue().toString();
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("update doctor set name = ?, specialization = ?,qualification = ? , fee = ?, email =? , room =? where id = ?");
 
             pst.setString(1, drname);
