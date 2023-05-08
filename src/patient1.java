@@ -256,8 +256,8 @@ public class patient1 extends javax.swing.JFrame {
      public void autoId()
     {
         try {
-             Class.forName("com.mysql.jdbc.Driver");
-                          con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","");;
+             Class.forName("com.mysql.cj.jdbc.Driver");
+                          con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");;
             Statement s = con1.createStatement();
             ResultSet rs = s.executeQuery("SELECT MAX(id) FROM patient");
             rs.next();
@@ -288,8 +288,8 @@ public class patient1 extends javax.swing.JFrame {
     private void table_update() {
         int CC;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-                  con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+                  con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("SELECT * FROM patient");
              ResultSet Rs = pst.executeQuery();  
             ResultSetMetaData RSMD = Rs.getMetaData();
@@ -316,8 +316,8 @@ public class patient1 extends javax.swing.JFrame {
         // TODO add your handling code here:
          String empno = txtempno.getText();       
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-                   con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+                   con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("delete from patient where id =?");
             pst.setString(1, empno);
             pst.executeUpdate();
@@ -346,8 +346,8 @@ public class patient1 extends javax.swing.JFrame {
          
          
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("insert into patient(id,name,phone,address)values(?,?,?,?)");
             pst.setString(1, empno);
             pst.setString(2, pname);
@@ -384,8 +384,8 @@ public class patient1 extends javax.swing.JFrame {
           String address = txtaddress.getText(); 
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-             con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+             con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("update patient set name = ?, phone = ?,address = ? where id = ?");
             pst.setString(1, pname);
             pst.setString(2, phone);
