@@ -343,7 +343,7 @@ return name;
        {
            
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
              con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
              pst = con1.prepareStatement("select * from patient");
               rs = pst.executeQuery();
@@ -368,7 +368,7 @@ return name;
        {
            
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
              con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
              pst = con1.prepareStatement("select * from doctor");
               rs = pst.executeQuery();
@@ -401,8 +401,8 @@ return name;
      public void autoId()
     {
         try {
-             Class.forName("com.mysql.jdbc.Driver");
-                          con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","");
+             Class.forName("com.mysql.cj.jdbc.Driver");
+                          con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             Statement s = con1.createStatement();
             ResultSet rs = s.executeQuery("SELECT MAX(id) FROM channel");
             rs.next();
@@ -433,7 +433,7 @@ return name;
     private void table_update() {
         int CC;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
                   con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
              //pst = con1.prepareStatement("select c.id,c.dname,p.name,c.roomno,c.date from channel c,patient p where c.pname = p.id and p.status = 'Active' ");       
                   
@@ -499,7 +499,7 @@ return name;
          String date = Date_Format.format(txtdate.getDate());
                
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("insert into channel(id,d_id,pname,roomno,date,status)values(?,?,?,?,?,'Active')");
          
