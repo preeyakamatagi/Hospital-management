@@ -376,7 +376,7 @@ return name;
      public void autoId()
     {
         try {
-             Class.forName("com.mysql.jdbc.Driver");
+             Class.forName("com.mysql.cj.jdbc.Driver");
                           con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             Statement s = con1.createStatement();
             ResultSet rs = s.executeQuery("SELECT MAX(id) FROM drug");
@@ -408,7 +408,7 @@ return name;
     private void table_update() {
         int CC;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
                   con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
              //pst = con1.prepareStatement("select c.id,c.dname,p.name,c.roomno,c.date from channel c,patient p where c.pname = p.id and p.status = 'Active' ");       
                   
@@ -442,7 +442,7 @@ return name;
         // TODO add your handling code here:
          String drno = txtid.getText();       
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
                    con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("delete from channel where id =?");
             pst.setString(1, drno);
@@ -474,7 +474,7 @@ return name;
          
                
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("insert into drug(id,item,description,sellprice,buyprice,qty)values(?,?,?,?,?,?)");
          
@@ -523,7 +523,7 @@ return name;
            String room = txtroom.getValue().toString(); 
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
              con1 = DriverManager.getConnection("jdbc:mysql://localhost/loyal","root","22122037pk");
             pst = con1.prepareStatement("update doctor set name = ?, specialization = ?,qualification = ? , fee = ?, email =? , room =? where id = ?");
           
